@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+.App-header {
+    width: 100%;
+    background: #FFFFFF;
+    height: 70px;
+}

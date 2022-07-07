@@ -58,16 +58,19 @@ class App extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-
+                    <table height="70px">
+                        <tr>
+                            <td>
+                                <img src={logo} height="70px" align="left" />
+                            </td>
+                            <td>
+                                <h1>Star Wars</h1> 
+                            </td>
+                        </tr>
+                    </table>
                 </header>
                 <body className="App-body">
                     <table align="center" cellSpacing="15">
-                        <tr>
-                            <td> <img src={logo} className="App-logo" alt="logo" />  </td>
-                            <td>
-                                <h1>Star Wars</h1>
-                            </td>
-                        </tr>
                         <tr>
                             <td>
                                 <button className="btn" onClick={this.handleClick.bind(this, "People")}>People</button>
