@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './PeoplePage.css';
+import './ListPage.css';
 import './Button.css';
 
-class PeoplePage extends React.Component {
+class ListPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +14,7 @@ class PeoplePage extends React.Component {
         };
     }
     componentDidMount() {
-        fetch("https://swapi.dev/api/people/")
+        fetch(this.props.url)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -41,18 +41,20 @@ class PeoplePage extends React.Component {
         } else {
             return (
                 <div>
-                    <p> Count = {count} </p>
-                    <ul>
+                    <table align="center" cellSpacing="15">
+                        <tr>
+                            <td> <p> Count = {count} </p>  </td>
+                        </tr>
                         {items.map(item =>
-                            <li key={item.name}>
-                                {item.name}
-                            </li>)
+                            <tr key={item.name}>
+                                <td> <button className="btn">{item.name}</button> </td>
+                            </tr>)
                         }
-                    </ul>
+                    </table>
                 </div>
             );
         }
     }
 }
 
-export default PeoplePage;
+export default ListPage;
